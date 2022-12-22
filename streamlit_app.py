@@ -3,7 +3,7 @@ import pandas
 import requests
 
 streamlit.title('My Parents New Healthy Diner')
-streamlit.header("Fruityvice Fruit Advice!")
+streamlit.header("Breakfast favorites")
 streamlit.text('🥣 Omega 3 & Blueberry Oatmeal')
 streamlit.text('🥗 Kale, Spinach & Rocket Smoothie')
 streamlit.text('🐔 Hard-Boiled Free-Range Egg')
@@ -22,6 +22,7 @@ fruites_to_show = my_fruit_list.loc[fruites_selected]
 streamlit.dataframe(fruites_to_show)
 
 
+streamlit.header("Fruityvice Fruit Advice!")
 fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
 
 fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
